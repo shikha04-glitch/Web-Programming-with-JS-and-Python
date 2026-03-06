@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shikha | Portfolio</title>
+    <link rel="stylesheet" href="re.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">SJ</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO / ABOUT -->
+<section id="about" class="hero reveal">
+    <div class="hero-img">
+    <img src="shikha.jpeg" alt="Shikha">
+        
+    </div>
+
+
+    <div class="hero-text">
+        <h1>Hey, I'm <span>Shikha</span></h1>
+        <p>
+            B.Tech CSE student exploring core CS concepts and web development.
+            Learning by building, breaking, and improving every day.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills reveal">
+    <h2>Skills</h2>
+    <div class="skill-box">
+        <h1 style="font-size: 24px;">Technologies and Frameworks</h1>
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>VS Code</span>
+        <span>Netlify</span>
+        <h1 style="font-size: 24px; margin-top: 20px;">Programming Languages</h1>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+        <span>C++</span>
+        <h1 style="font-size: 24px; margin-top: 20px;">Core Concepts</h1>
+        <span>Data Structures</span>
+        <span>Algorithms</span>
+        <span>Database Management Systems</span>
+        <h1 style="font-size: 24px; margin-top: 20px;">Soft Skills</h1>
+        <span>Team Collaboration</span>
+        <span>Time Management</span>
+        <span>Active Listening</span>
+        <span>Problem Solving</span>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects reveal">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+        <div class="project-card" onclick="openProject('project1.html')">
+            <h3>InStock - Inventory Management System</h3>
+            <p>A web application for managing inventory in retail stores.</p>
+        </div>
+
+        <div class="project-card" onclick="openProject('project2.html')">
+            <h3>Recipe Haven</h3>
+            <p>A web application for managing and sharing recipes.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contact" class="contact reveal">
+    <h2>Contact Me</h2>
+
+    <div class="contact-links">
+        <a href="mailto:jha89719@gmail.com">📧 Email</a>
+        <a href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+    </div>
+
+    <p class="msg-trigger" onclick="openModal()">Send me a message 💬</p>
+
+    <div class="modal" id="msgModal">
+        <div class="modal-box">
+            <span class="close" onclick="closeModal()">×</span>
+
+            <h3>How would you like to send your message?</h3>
+
+            <div class="modal-options">
+                <button type="button" onclick="showAnonymous()">Send Anonymously</button>
+                <button type="button" onclick="showNormal()">Send With Name</button>
+            </div>
+
+            <form class="form anon-form">
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+
+            <form class="form normal-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+<footer>
+    <p>© 2026 Shikha.</p>
+</footer>
+
+<script src="on.js"></script>
+
+</body>
+</html>

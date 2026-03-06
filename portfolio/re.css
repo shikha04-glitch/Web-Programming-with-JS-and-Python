@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8fafc;
+    color: #111827;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 60px;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    z-index: 100;
+}
+
+.navbar a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #111827;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    padding: 120px 80px;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img img {
+    width: 360px;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 24px;
+
+    transform: rotate(-4deg);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.18),
+        0 10px 20px rgba(0, 0, 0, 0.12);
+
+    transition: transform 0.4s ease;
+}
+.hero-img img:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+.hero-img::before {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 460px;
+    background: #e0e7ff;
+    border-radius: 24px;
+    transform: rotate(3deg);
+    z-index: -1;
+}
+.hero-img {
+    position: relative;
+}
+.hero-text {
+    flex: 1;
+}
+
+
+.hero-text h1 {
+    font-size: 48px;
+}
+
+.hero-text span {
+    color: #6366f1;
+}
+
+.hero-text p {
+    margin-top: 15px;
+    font-size: 18px;
+    max-width: 500px;
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 80px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* SKILLS */
+.skill-box span {
+    display: inline-block;
+    background: white;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* PROJECTS */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+/* CONTACT */
+.contact-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.msg-line {
+    margin: 30px 0 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #eef2ff;
+}
+
+/* SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.msg-trigger {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #6366f1;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.msg-trigger:hover {
+    text-decoration: underline;
+}
+
+/* FORM ANIMATION */
+.contact-form {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+    opacity: 0;
+    margin-top: 20px;
+}
+
+.contact-form.active {
+    max-height: 600px;
+    opacity: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.anon {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+.msg-trigger {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #6366f1;
+    cursor: pointer;
+}
+
+/* MODAL BACKGROUND */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+/* MODAL BOX */
+.modal-box {
+    background: white;
+    padding: 30px;
+    width: 400px;
+    border-radius: 16px;
+    position: relative;
+    animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.modal.active {
+    display: flex;
+}
+
+.modal-options {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.modal-options button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #6366f1;
+    color: white;
+}
+
+/* FORMS */
+.form {
+    display: none;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background: #111827;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+.reveal {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.reveal.active-click {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+/* SERVICES */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* REAL GLOW */
+.service-card.active-click {
+    background: linear-gradient(135deg, #aa83cb, #ebe7eddc);
+    color: white;
+    box-shadow:
+        0 0 25px rgba(106,17,203,0.6),
+        0 0 50px rgba(37,117,252,0.4);
+    transform: scale(1.05);
+}
+
+.learn-more {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+
