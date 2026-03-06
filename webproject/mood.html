@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoodTunes 🎧</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="mood.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">MoodTunes 🎧</h1>
+        <p class="subtitle">Select your mood & vibe with music</p>
+
+        <div class="mood-grid">
+            <div class="mood-card" data-mood="happy">😊 Happy</div>
+            <div class="mood-card" data-mood="sad">😢 Sad</div>
+            <div class="mood-card" data-mood="chill">🌊 Chill</div>
+            <div class="mood-card" data-mood="romantic">💖 Romantic</div>
+            <div class="mood-card" data-mood="angry">🔥 Angry</div>
+        </div>
+
+        <div class="songs-section">
+            <h2 id="mood-heading"></h2>
+            <div id="songs-container"></div>
+        </div>
+    </div>
+
+<script src="mood.js"></script>
+</body>
+</html>
