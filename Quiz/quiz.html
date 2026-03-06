@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Quiz App</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<header>
+    <h1>Smart Quiz Challenge</h1>
+    <p>Test Your Knowledge in 5 Quick Questions!</p>
+</header>
+
+<section class="quiz-container">
+
+    <div id="quiz-box">
+        <div id="timer">Time Left: <span id="time">15</span>s</div>
+        <div id="progress">Question 1 of 5</div>
+
+        <h2 id="question">Question text</h2>
+
+        <div id="options"></div>
+
+        <button id="next-btn">Next</button>
+    </div>
+
+    <div id="result-box" class="hidden">
+        <h2>Your Result</h2>
+        <p id="score-text"></p>
+        <p id="feedback"></p>
+        <button id="restart-btn">Restart Quiz</button>
+    </div>
+
+</section>
+
+<script src="quiz.js"></script>
+</body>
+</html>
