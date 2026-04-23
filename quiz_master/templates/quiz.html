@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>Answer All Questions</h2>
+
+    <form action="/result" method="POST">
+
+        {% for q in questions %}
+        {% set i = loop.index0 %}
+
+        <div class="card">
+            <p>{{ loop.index }}. {{ q.question }}</p>
+
+            {% for option in q.options %}
+                <label class="option">
+                    <input type="radio" name="q{{ i }}" value="{{ option }}" required>
+                    {{ option }}
+                </label>
+            {% endfor %}
+
+            <!-- Hidden correct answer -->
+            <input type="hidden" name="correct{{ i }}" value="{{ q.answer }}">
+        </div>
+
+        {% endfor %}
+
+        <button class="btn">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
