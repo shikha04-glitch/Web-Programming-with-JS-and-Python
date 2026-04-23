@@ -1,0 +1,94 @@
+body {
+    font-family: 'Segoe UI';
+    background: #f5f7fb;
+    margin: 0;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #111;
+    color: white;
+}
+
+.nav-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    background: #4CAF50;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+/* CONTAINER */
+.container {
+    padding: 30px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ACTIONS */
+.actions {
+    margin-top: 10px;
+}
+
+.edit {
+    color: blue;
+    margin-right: 10px;
+}
+
+.delete {
+    color: red;
+}
+
+/* FORM */
+.form-box {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+}
+
+/* EMPTY STATE */
+.empty {
+    text-align: center;
+    margin-top: 50px;
+}

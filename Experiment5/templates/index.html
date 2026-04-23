@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>📚 Latest Posts</h1>
+
+{% if posts %}
+<div class="grid">
+    {% for post in posts %}
+    <div class="card">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.content[:120] }}...</p>
+
+        <div class="actions">
+            <a href="/edit/{{ post.id }}" class="edit">Edit</a>
+            <a href="/delete/{{ post.id }}" 
+               class="delete"
+               onclick="return confirm('Delete this post?')">Delete</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty">
+    <h2>No posts yet 😔</h2>
+    <p>Create your first blog post!</p>
+</div>
+{% endif %}
+
+{% endblock %}
